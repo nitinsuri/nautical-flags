@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nautical Flags</title>
+    <link href="https://fonts.googleapis.com/css?family=Bai+Jamjuree:400,700" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Bai Jamjuree", Arial, Helvetica, sans-serif;
+        }
+
+        html {
+            font-family: "Bai Jamjuree", Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            text-align: center;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #main-wrapper {
+            margin: 0 auto;
+            max-width: 110rem;
+        }
+
+        @media screen and (max-width: 1100px){
+            #main-wrapper {
+                max-width: 90rem;
+                padding: 0 2rem;
+            }
+        }
+
+        h1,h2,h3,h4,h5,h6 {
+            margin: 0 0 1rem 0;
+        }
+
+        .hidden {
+            display: none;
+            opacity: 0;
+        }
+
+        button {
+            border-radius: 10px;
+            font-size: 1.6em;
+            padding: 10px;
+        }
+
+        button.flat {
+            background-color: rgb(251, 251, 251);
+            border: 2px solid rgb(240, 240, 240);
+        }
+
+        button.submit {
+            background-color: rgb(100, 149, 237);
+            border: 2px solid rgb(73, 107, 171);
+            color: #ffffff;
+        }
+
+        #word {
+            display: none;
+            font-size: 2em;
+            text-transform: uppercase;
+        }
+
+        #flags {
+            margin: 10px 0;
+        }
+
+        #flags span {
+            display: inline-block;
+            margin: 0 5px;
+        }
+
+        #flags span img {
+            display: inline-block;
+            margin-bottom: 10px;
+            width: 36px;
+        }
+
+        .word-input {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .word-input input {
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            font-size: 2em;
+            padding: 0;
+            text-align: center;
+            width: 300px;
+        }
+
+        div.keys span {
+            display: inline-block;
+            line-height: 1;
+            margin: 3px;
+        }
+
+        div.keys span img {
+            display: block;
+            margin-bottom: 1px;
+            width: 36px;
+        }
+
+        div#totalScore {
+            font-size: 10rem;
+        }
+
+        #js-result {
+            border: 2px solid transparent;
+            border-radius: 5px;
+            font-size: 3em;
+            margin: 10px 0;
+            padding: 10px;
+        }
+
+        #js-result.success {
+            border-color: green;
+            color: green;
+        }
+
+        #js-result.fail {
+            border-color: red;
+            color: red;
+        }
+
+        @media (min-width: 1025px) {
+
+            section {
+                display: flex;
+            }
+
+            div.game {
+                padding: 10px;
+                width: 60%;
+            }
+
+            #flags span img {
+                width: 72px;
+            }
+
+            div.keys {
+                padding: 10px;
+                width: 30%;
+            }
+            div#totalScore {
+                width: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section id="main-wrapper">
+        <h1>Sailors Messaging Board</h1>
+        <div class="game">
+            <button id="js-btn-generate-word" class="flat">Generate new word</button>
+            <h2 id="word"></h2>
+            <div id="flags"></div>
+            <div class="word-input hidden"><p>Write a word in the box below using the nautical FLAGS list on the right
+                side.</p>
+                <input type="text" name="word-found" id="word-found" /></div>
+            <button class="submit hidden" id="js-btn-check-answer">Check your answer</button>
+            <div id="js-result" class="hidden"></div>
+        </div>
+        <div class="keys">
+            <span><img src="images/flag-a.jpg" alt="">A</span>
+            <span><img src="images/flag-b.jpg" alt="">B</span>
+            <span><img src="images/flag-c.jpg" alt="">C</span>
+            <span><img src="images/flag-d.jpg" alt="">D</span>
+            <span><img src="images/flag-e.jpg" alt="">E</span>
+            <span><img src="images/flag-f.jpg" alt="">F</span>
+            <span><img src="images/flag-g.jpg" alt="">G</span>
+            <span><img src="images/flag-h.jpg" alt="">H</span>
+            <span><img src="images/flag-i.jpg" alt="">I</span>
+            <span><img src="images/flag-j.jpg" alt="">J</span>
+            <span><img src="images/flag-k.jpg" alt="">K</span>
+            <span><img src="images/flag-l.jpg" alt="">L</span>
+            <span><img src="images/flag-m.jpg" alt="">M</span>
+            <span><img src="images/flag-n.jpg" alt="">N</span>
+            <span><img src="images/flag-o.jpg" alt="">O</span>
+            <span><img src="images/flag-p.jpg" alt="">P</span>
+            <span><img src="images/flag-q.jpg" alt="">Q</span>
+            <span><img src="images/flag-r.jpg" alt="">R</span>
+            <span><img src="images/flag-s.jpg" alt="">S</span>
+            <span><img src="images/flag-t.jpg" alt="">T</span>
+            <span><img src="images/flag-u.jpg" alt="">U</span>
+            <span><img src="images/flag-v.jpg" alt="">V</span>
+            <span><img src="images/flag-w.jpg" alt="">W</span>
+            <span><img src="images/flag-x.jpg" alt="">X</span>
+            <span><img src="images/flag-y.jpg" alt="">Y</span>
+            <span><img src="images/flag-z.jpg" alt="">Z</span>
+        </div>
+        <div id="totalScore">0</div>
+    </section>
+    <script src="nautical-flags.js"></script>
+</body>
+
+</html>
