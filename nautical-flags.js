@@ -1,8 +1,8 @@
 let resultBlock = document.querySelector("#js-result"),
     resultMessage = {
-        "success": "That's CORRECT. You are awesome!",
-        "fail": "Well tried. But that's not the right answer.",
-        "empty": "Answer cannot be empty."
+        "success" : "That's CORRECT. You are awesome!",
+        "fail" : "Well tried. But that's not the right answer.",
+        "empty" : "Answer cannot be empty."
     },
     scoreBlock = document.querySelector("#totalScore"),
     score = parseInt(scoreBlock.textContent),
@@ -39,6 +39,7 @@ function checkAnswer(){
             resultBlock.textContent = resultMessage.success;
             resultBlock.classList.add("success");
             resultBlock.classList.remove("fail");
+            generateWord();
         } else {
             score = 0;
             resultBlock.textContent = resultMessage.fail;
@@ -55,4 +56,3 @@ function checkAnswer(){
 
 document.querySelector("#js-btn-generate-word").addEventListener("click", generateWord);
 document.querySelector("#js-btn-check-answer").addEventListener("click",checkAnswer);
-window.addEventListener("load", generateWord);
